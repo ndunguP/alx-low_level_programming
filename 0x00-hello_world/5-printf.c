@@ -1,4 +1,4 @@
-include '_attribute_'<stdio.h>
+include '='<stdio.h>
 /**
  *  * main - The purpose of this file is to output
  *   * the string: with proper grammar, but the outcome is a piece of art,
