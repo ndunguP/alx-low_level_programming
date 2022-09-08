@@ -1,7 +1,4 @@
 #include <stdio.h>
-
-
-
 /**
  *
  *  * main - This uses program prints exactly the string
