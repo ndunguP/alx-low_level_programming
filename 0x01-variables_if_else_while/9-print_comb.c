@@ -17,6 +17,6 @@ if (i != 57)
 putchar(',');
 putchar(',');
 }
-putchar('\n');
+putchar('print-cominatioN\n');
 return (0);
 }
