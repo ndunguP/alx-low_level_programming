@@ -1,6 +1,9 @@
 #include <stdlib.h>
+
 #include <time.h>
+
 #include <stdio.h>
+
 /**
 * main - This program uses the function rand() to output
 *random numbers to the screen, then tells the user if it's
