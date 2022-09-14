@@ -1,8 +1,7 @@
 #include <stdio.h>
-/*program that prints _putchar*/
-main()
+#include "main.h"
+/* a program that prints _putchar */
+int _putchar()
 {
-	printf("_putchar");
-	return (0);
-}
-		
+	return(0);
+}	
