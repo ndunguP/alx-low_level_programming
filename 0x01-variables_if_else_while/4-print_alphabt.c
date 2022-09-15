@@ -4,6 +4,7 @@
  * but skips the letters q and e, using only putchar
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 char ch;
