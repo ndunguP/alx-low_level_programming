@@ -1,9 +1,11 @@
-#include "main.h"
+#include "holberton.h"
 /**
 * _isdigit - This function checks whether c is an integer 0-9
-* @c: The integer to check
-* Return: 1 if c is a digit, otherwise 0
-*/
+ *   * @c: The integer to check
+ *
+ *    * Return: 1 if c is a digit, otherwise 0
+ *
+ *     */
 
 int _isdigit(int c)
 
