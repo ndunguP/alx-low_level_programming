@@ -28,13 +28,13 @@ void puts_half(char *str)
 
 							{
 
-										_putchar(str[j]);
+										putchar(str[j]);
 
 											}
 
 
 
-						_putchar('\n');
+						putchar('\n');
 
 }
 
