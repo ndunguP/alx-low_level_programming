@@ -18,13 +18,13 @@ int i, j;
 
 
 
-for(i = 0; s[i] != 0; i++)
+for (i = 0; s[i] != 0; i++)
 
 								;
 
 
 
-for(i = i - 1; j < i; i--)
+for (i = i - 1; j < i; i--)
 
 								{
 
