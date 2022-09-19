@@ -10,30 +10,25 @@ void puts2(char *str)
 
 {
 
-		int i;
+int i;
 
-			char ch;
+char ch;
 
+for (i = 0; str[i] != 0; i++)
 
+{
 
-				for (i = 0; str[i] != 0; i++)
+if (i % 2 == 0)
 
-						{
+{
 
-									if (i % 2 == 0)
+ch = str[i];
 
-												{
+										putchar(ch);
 
-																ch = str[i];
+}
 
-																			putchar(ch);
+}
 
-																					}
-
-										}
-
-
-
-					putchar('\n');
-
+putchar('\n');
 }
