@@ -10,24 +10,19 @@ void print_array(int *a, int n)
 
 {
 
-		int i;
+int i;
 
+for (i = 0; i < n; i++)
 
+{
 
-			for (i = 0; i < n; i++)
+printf("%i", a[i]);
 
-					{
+if (i != n - 1)
 
-								printf("%i", a[i]);
+printf(", ");
 
-										if (i != n - 1)
+}
 
-														printf(", ");
-
-											}
-
-
-
-				putchar('\n');
-
+putchar('\n');
 }
