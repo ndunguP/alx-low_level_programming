@@ -20,7 +20,7 @@ for (i = i - 1; i >= 0; i--)
 
 ch = s[i];
 
-putchar(ch);
+putchar(c);
 
 }
 
