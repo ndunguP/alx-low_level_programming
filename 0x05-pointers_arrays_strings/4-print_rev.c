@@ -2,7 +2,6 @@
 #include <stdio.h>
 /**
 *print_rev - This function prints a string in reverse
-* followed by a newline
 * @s: The string to print in reverse
 */
 void print_rev(char *s)
@@ -26,5 +25,4 @@ putchar(ch);
 }
 
 putchar('\n');
-
 }
