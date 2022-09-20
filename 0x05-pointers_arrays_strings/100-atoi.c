@@ -32,5 +32,5 @@ i++;
 }
 }
 negative = negative * -1;
-return (num * negative);
+return (num  *negative);
 }
