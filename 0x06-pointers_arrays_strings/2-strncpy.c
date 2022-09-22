@@ -7,29 +7,13 @@
 * Return: dest - the copied string
 */
 char *_strncpy(char *dest, char *src, int n)
-
 {
-
-		int i;
-
-
-
-			/* copy n bytes of src string to dest string */
-
-			for (i = 0; i < n && src[i] != 0; i++)
-
-						dest[i] = src[i];
-
-
-
-				/* add null byte to dest string array after copied char */
-
-				for (; i < n; i++)
-
-							dest[i] = '\0';
-
-
-
-					return (dest);
-
+int i;
+/* copy n bytes of src string to dest string */
+for (i = 0; i < n && src[i] != 0; i++)
+dest[i] = src[i];
+/* add null byte to dest string array after copied char */
+for (; i < n; i++)
+dest[i] = '\0';
+return (dest);
 }
