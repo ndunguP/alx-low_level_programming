@@ -11,15 +11,10 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-int len, i;
-/* get the length of dest string */
-for (len = 0; dest[len] != 0; len++);
-/* append src to dest one character at a time */
-for (i = 0; i < n; i++)
-{
-dest[len] = src[i];
-len++;
-}
-/* return concatenated string */
+int index = 0, dest_len = 0;
+while (dest[index++])
+dest_len++;
+for (index = 0; src[index] && index < n; index++)
+dest[dest_len++] = src[index];
 return (dest);
 }
