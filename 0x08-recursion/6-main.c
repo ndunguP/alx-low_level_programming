@@ -6,7 +6,7 @@
 * Return: Always 0.
 */
 
-int main(void)
+int main()
 {
 int r;
 	        r = is_prime_number(1);
