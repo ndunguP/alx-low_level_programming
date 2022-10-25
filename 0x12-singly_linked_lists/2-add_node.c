@@ -11,24 +11,11 @@
 
 int _strlen(const char *s)
 {
-
-		int i;
-
-
-
-			for (i = 0; s[i] != '\0'; i++)
-
-						continue;
-
-
-
-				return (i);
-
+int i;
+for (i = 0; s[i] != '\0'; i++)
+continue;
+return (i);
 }
-
-
-
-
 
 /**
 *add_node - This function adds a new node at the
@@ -38,48 +25,18 @@ int _strlen(const char *s)
 * Return: The address of the new element, of NULL if it failed
 */
 
-
-
 list_t *add_node(list_t **head, const char *str)
-
 {
-
-
-
-		/* create new list & allocate memory for it */
-
-		list_t *new = (list_t *)malloc(sizeof(list_t));
-
-
-
-			if (new == NULL)
-
-						return (NULL);
-
-
-
-				/* assign new data */
-
-				new->str = strdup(str);
-
-					new->len = _strlen(str);
-
-
-
-						/* assign 'head' as next element of new list */
-
-						new->next = (*head);
-
-
-
-							/* move head to point to new list */
-
-							(*head) = new;
-
-
-
-								return (new);
-
-
-
+/* create new list & allocate memory for it */
+list_t *new = (list_t *)malloc(sizeof(list_t));
+if (new == NULL)
+return (NULL);
+/* assign new data */
+new->str = strdup(str);
+new->len = _strlen(str);
+/* assign 'head' as next element of new list */
+new->next = (*head);
+/* move head to point to new list */
+(*head) = new;
+return (new);
 }
