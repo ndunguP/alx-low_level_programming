@@ -19,6 +19,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 * (3) if count is equal to the passed index, then return current node
 * (4) increment count
 * (5) change current to point to next of the current
+*/
 /* (1) */
 listint_t *current = head;
 /* (2) */
