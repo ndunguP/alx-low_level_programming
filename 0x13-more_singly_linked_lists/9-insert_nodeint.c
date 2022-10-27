@@ -29,39 +29,18 @@ return (count);
 
 listint_t *add_nodeint(listint_t **head, int n)
 {
-
-		/* create a new node & allocate memory for it */
-
-		listint_t *new = malloc(sizeof(listint_t));
-
-
-
-		/* check to see if malloc failed */
-
-			if (new == NULL)
-
-			return (NULL);
-
-
-
-				/* assign new data */
-
-				new->n = n;
-
-					new->next = *head;
-
-
-
-		/* assigning new as the head/beginning */
-
-						*head = new;
-
-
-
-							return (new);
-
+/* create a new node & allocate memory for it */
+listint_t *new = malloc(sizeof(listint_t));
+/* check to see if malloc failed */
+if (new == NULL)
+return (NULL);
+/* assign new data */
+new->n = n;
+new->next = *head;
+/* assigning new as the head/beginning */
+*head = new;
+return (new);
 }
-
 
 /**
 * insert_nodeint_at_index - This function inserts a new node
@@ -90,53 +69,27 @@ listint_t *new, *prev, *current;
 if (*head == NULL)
 return (NULL);
 current = *head;
-
-
-
-	if (idx > listint_len(*head) || idx <= 0)
-
-	return (NULL);
-
-							else
-
-									{
-
-												if (idx == 1)
-
-															{
-
-												new = add_nodeint(head, n);
-
-																						return (new);
-
-																								}
-
-														else
-
-																	{
-
-																					for (i = 1; i < idx; i++)
-
-																									{
-
-																														prev = current;
-
-																																		current = current->next;
-
-																																					}
-
-																								new = malloc(sizeof(listint_t));
-
-																											new->n = n;
-
-																														prev->next = new;
-
-																																	new->next = current;
-
-																																			}
-
-															}
-
-								return (new);
-
+if (idx > listint_len(*head) || idx <= 0)
+return (NULL);
+else
+{
+if (idx == 1)
+{
+new = add_nodeint(head, n);
+return (new);
+}
+else
+{
+for (i = 1; i < idx; i++)
+{
+prev = current;
+current = current->next;
+}
+new = malloc(sizeof(listint_t));
+new->n = n;
+prev->next = new;
+new->next = current;
+}
+}
+return (new);
 }
