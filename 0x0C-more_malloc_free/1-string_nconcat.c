@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-#inlude <stdio.h>
+#include <stdio.h>
 
 /**
  * string_nconnect - concatenates two strings.
