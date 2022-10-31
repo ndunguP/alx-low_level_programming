@@ -1,6 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
-
+#include <stdio.h>
 /**
 * struct dog - This struct creates a new type
 * @name: First member, char pointer
