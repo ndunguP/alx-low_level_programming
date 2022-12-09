@@ -1,45 +1,36 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
-* delete_dnodeint_at_index - a function that deletes the node at index,
-* of a dlistint_t linked list.
-* @head: points to the pointer that points to the address of the first node.
-* @index: the position where the new node should be added.
-* Return: 1 if it succeeded, -1 if it failed.
+* delete_dnodeint_at_index - This function deletes the node at the passed
+* argument index of the passed dlistint_t linked list
+* @head: The head node of the linked list
+* @index: The index of the node to be deleted
+* Return: 1 for success, else -1 for failure
 */
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int inde)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-unsigned int count = 1;
-dlistint_t *current, *tmp_next, *tmp_afternext;
-if (head == NULL || *head == NULL)
-return (-1);
-current = *head;
-if (index == 0)
+dlistint_t *tmp = NULL;
+if (head)
 {
-*head = (*head)->next;
-if (*head)
-(*head)->prev = NULL;
-free(current);
+/* traverse through list to make sure */
+tmp = *head;
+while (tmp && index)
+{
+tmp = tmp->next;
+index--;
+}
+if (!index && tmp)
+{
+if (tmp->prev)
+tmp->prev->next = tmp->next;
+else
+*head = tmp->next;
+if (tmp->next)
+tmp->next->prev = tmp->prev;
+free(tmp);
 return (1);
 }
-while (count < index)
-{
-current = current->next;
-if (current == NULL)
-return (-1);
-count++;
 }
-tmp_next = current->next;
-tmp_afternext = tmp_next->next;
-free(tmp_next);
-current->next = tmp_afternext;
-/* tmp_afternext->prev = current; */
-if (tmp_next != NULL)
-tmp_next->next->prev = tmp_next->prev;
-if (tmp_next->prev != NULL)
-tmp_next->prev->next = tmp_next->next;
-return (1);
+return (-1);
 }
