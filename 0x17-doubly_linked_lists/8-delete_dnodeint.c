@@ -8,76 +8,36 @@
 * Return: 1 if it succeeded, -1 if it failed.
 */
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
-
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int inde)
 {
-
-		unsigned int count = 1;
-
-			dlistint_t *current, *tmp_next, *tmp_afternext;
-
-
-
-				if (head == NULL || *head == NULL)
-
-							return (-1);
-
-
-
-					current = *head;
-
-
-
-						if (index == 0)
-
-								{
-
-											*head = (*head)->next;
-
-													if (*head)
-
-																	(*head)->prev = NULL;
-
-															free(current);
-
-																	return (1);
-
-																		}
-
-
-
-							while (count < index)
-
-									{
-
-												current = current->next;
-
-														if (current == NULL)
-
-																		return (-1);
-
-																count++;
-
-																	}
-
-								tmp_next = current->next;
-
-									tmp_afternext = tmp_next->next;
-
-										free(tmp_next);
-
-											current->next = tmp_afternext;
-
-												/* tmp_afternext->prev = current; */
-
-												if (tmp_next != NULL)
-
-															tmp_next->next->prev = tmp_next->prev;
-
-													if (tmp_next->prev != NULL)
-
-																tmp_next->prev->next = tmp_next->next;
-
-														return (1);
-
+unsigned int count = 1;
+dlistint_t *current, *tmp_next, *tmp_afternext;
+if (head == NULL || *head == NULL)
+return (-1);
+current = *head;
+if (index == 0)
+{
+*head = (*head)->next;
+if (*head)
+(*head)->prev = NULL;
+free(current);
+return (1);
+}
+while (count < index)
+{
+current = current->next;
+if (current == NULL)
+return (-1);
+count++;
+}
+tmp_next = current->next;
+tmp_afternext = tmp_next->next;
+free(tmp_next);
+current->next = tmp_afternext;
+/* tmp_afternext->prev = current; */
+if (tmp_next != NULL)
+tmp_next->next->prev = tmp_next->prev;
+if (tmp_next->prev != NULL)
+tmp_next->prev->next = tmp_next->next;
+return (1);
 }
